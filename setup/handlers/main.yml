@@ -1,0 +1,10 @@
+---
+
+- name: copy ssh admin pubkey
+  copy:
+    src: "{{ gitolite.admin.pubkey }}"
+    dest: /tmp/{{ gitolite.admin.name }}.pub
+    owner: gitolite3
+
+- name: run gitolite setup
+  command: gitolite setup -pk /tmp/{{ gitolite.admin.name }}.pub

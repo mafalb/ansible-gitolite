@@ -1,0 +1,15 @@
+---
+
+- name: include OS specific variables
+  include_vars: "{{ ansible_os_family }}.yml"
+
+# only run setup once
+#
+- name: gitolite is setup
+  command: /bin/true
+  args:
+    creates: "{{ gitolite.directory }}/.gitolite/conf/gitolite.conf"
+  check_mode: false
+  notify:
+    - copy ssh admin pubkey
+    - run gitolite setup

@@ -1,0 +1,5 @@
+---
+
+gitolite:
+  admin:
+    name: root

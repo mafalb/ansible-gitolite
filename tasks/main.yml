@@ -1,0 +1,6 @@
+---
+
+- name: gitolite is installed
+  package:
+    name: gitolite3
+    state: present

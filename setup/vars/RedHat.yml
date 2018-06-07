@@ -1,0 +1,4 @@
+---
+
+gitolite:
+  directory: /var/lib/gitolite3
